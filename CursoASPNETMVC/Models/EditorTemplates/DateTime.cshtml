@@ -1,0 +1,14 @@
+﻿@model DateTime?
+@*si no tiene un valor lo creamos*@
+@if (!Model.HasValue)
+{
+    <input type="datetime" id="@ViewData.TemplateInfo.GetFullHtmlFieldId("")" 
+           name="@ViewData.TemplateInfo.GetFullHtmlFieldName("")" />
+}
+@*si no lo tiene*@
+else
+{
+    <input type="datetime" value="@Model.Value.ToString("yyyy-MM-dd")" 
+           id="@ViewData.TemplateInfo.GetFullHtmlFieldId("")" 
+           name="@ViewData.TemplateInfo.GetFullHtmlFieldName("")" />
+}
